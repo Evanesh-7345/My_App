@@ -91,7 +91,11 @@ fun Home_Screen(navController: NavHostController) {
         Button(
             onClick = {navController.navigate(ROUTE_DASHBOARD)},
             modifier = Modifier.fillMaxWidth(0.5f)
-        ){Text(text = "Dashboard")}
+        ){Text(
+            text = "Dashboard",
+            fontSize = 20.sp,
+            fontFamily = FontFamily.Monospace,
+            color = Color.White)}
     }
 }
 

@@ -13,21 +13,19 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 class DashboardViewModel: ViewModel(){
-    private val _stats= MutableStateFlow(
+    val _stats= MutableStateFlow(
         listOf(
-            DashboardStat("Revenue","12000", Icons.Default.Phone, Color.Magenta),
-            DashboardStat("User","1456",Icons.Default.Person, Color.Cyan)
+            DashboardStat(tittle = "Revenue", value = "12000", Icons.Default.Phone, Color.Cyan),
+            DashboardStat(tittle = "Revenue", value = "1456", Icons.Default.Person ,Color.Cyan),
         )
     )
-//    val stats: StateFlow<List<DashboardStat>>=_stats
-    private val quickAction=MutableStateFlow(
+    val stats: StateFlow<List<DashboardStat>>get() = _stats
+    private val _quickAction= MutableStateFlow(
         listOf(
-            QuickAction("Add a new user", Icons.Default.Person),
-            QuickAction("Generate report", Icons.Default.AccountCircle),
-            QuickAction("Setting",Icons.Default.Settings),
+            QuickAction(tittle = "Add new user", Icons.Default.Person),
+            QuickAction(tittle = "Generate Report", Icons.Default.AccountCircle),
+            QuickAction(tittle = "Settings", Icons.Default.Settings)
         )
     )
-    val quickAction: StateFlow<List<QuickAction>>get()=_quickAction
-
-
+    val quickAction: StateFlow<List<QuickAction>>get() = _quickAction
 }

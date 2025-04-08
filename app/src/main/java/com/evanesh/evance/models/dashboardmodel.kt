@@ -5,12 +5,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 
 data class DashboardStat(
-    val title: String,
+    val tittle: String,
     val value: String,
     val icon: ImageVector,
     val background:Color
 )
 data class QuickAction(
-    val title: String,
+    val tittle: String,
     val icon: ImageVector
 )
